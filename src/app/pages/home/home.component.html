@@ -1,0 +1,101 @@
+<h1>EJERCICIOS DIRECTIVAS</h1>
+
+
+
+<h2>EJERCICIO 1 - DIFERENTES DIRECTIVAS</h2>
+
+<p>En este ejercicio se muestran DOS TIPOS DE DIRECTIVAS. Las estructurales (las que afectan al DOOM)
+  y las de atributos (las que afectan a los atributos de los elementos). En este caso, se muestra el uso de
+  "ngClass" y "ngStyle" como directivas de atributos, y "for", "if/else" y "switch" como directivas estructurales.
+</p>
+
+<ul>
+  <li>ESTRUCTURALES</li>
+  <br>
+  <li>if/else sirve para mostrar u ocultar elementos según una condición</li>
+  <li>for sirve para iterar sobre una lista de elementos</li>
+  <li>switch case sirve para mostrar diferentes mensajes según el valor de una variable</li>
+  <br>
+  <li>ATRIBUTOS</li>
+  <br>
+  <li>ngClass sirve para aplicar clases CSS de forma condicional</li>
+  <li>ngStyle sirve para aplicar estilos CSS de forma condicional</li>
+  <li>ngModel sirve para crear enlaces bidireccionales entre el modelo y la vista</li>
+</ul>
+
+
+
+
+<!-- Ejercicio 2 -->
+<h2>EJERCICIO 2 - CONDICIONAL IF</h2>
+<p>Este ejercicio muestra un mensaje condicional basado en la edad del usuario. El booleano
+  "mayorEdad" por defecto es false. Pero si se cambia a true el mensaje mostrará
+  "Eres mayor de edad".
+</p>
+
+
+<ul>
+  @if(mayorEdad){
+  <p>Eres mayor de edad</p>
+  } @else {
+  <p>Eres menor de edad</p>
+  }
+</ul>
+
+<!-- Ejercicio 3 -->
+<h2>EJERCICIO 3 - ITERACIÓN FOR / EJERCICIO 4 - SWITCH CASE</h2>
+<P>Aquí se listan los usuarios ,que son 3.</P>
+<p> Y a su vez este switch case en el caso de que coincida con el nombre de la variable "usuario que es la que lista
+  los usuarios, mostrará un mensaje personalizado para cada uno de ellos. En este caso, si el nombre del usuario es
+  "Juan",se mostrará "Hola Juan". Si el nombre es "Mike", se mostrará "Hola Mike". Y si el nombre es "Mario", se
+  mostrará "Hola Mario".
+</p>
+
+<ul>
+  @for (usuario of usuarios; track $index) {
+  <li>{{usuario.nombre}} {{usuario.apellido}}</li>
+
+  <li>
+
+    @switch (usuario.nombre) {
+    @case ('Juan') {
+    <p>Hola Juan</p>
+    }
+
+    @case ('Mike') {
+    <p>Hola Mike</p>
+    }
+
+    <!-- Ejercicio 5 -->
+
+    @case ('Mario') {
+    <p>Hola Mario</p>
+    }
+    }
+  <li>
+    }
+</ul>
+
+
+<!-- Ejercicio 5 -->
+<h2>EJERCICIO 5 - PROBAR LAS DEMÁS DIRECTIVAS</h2>
+
+<h3>En este ejercicio se muestra el uso de otras directivas como "ngClass", "ngStyle" Y "ngModel". </h3>
+
+<h2>NGCLASS</h2>
+
+<p [ngClass]="{'clase-activa': estaMarcado, 'clase-inactiva': !estaMarcado}">
+<p> Este párrafo cambia de clase según el valor de "estaMarcado". Si "estaMarcado" es true, se aplicará la clase
+  "clase-activa". Si es false, se aplicará la clase "clase-inactiva".</p>
+
+<h2>NGSTYLE</h2>
+<p>Este párrafo cambia de color de fondo según el valor de "colorFondo". Como el fondo
+  es blanco, el fondo del texto se muestra en rojo.
+</p>
+<p [ngStyle]="{'background-color': colorFondo, 'color': 'white'}"></p>
+
+<h2>NGMODEL</h2>
+<p>Lo que hace es que lo que le pida al usuario se almacene en la variable "nombreAtributo".</p>
+<p>Introduce un valor:</p>
+<input [(ngModel)]="nombreAtributo" placeholder="Escribe algo">
+<p>El valor introducido es: {{nombreAtributo}}</p>
