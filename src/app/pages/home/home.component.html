@@ -99,3 +99,39 @@
 <p>Introduce un valor:</p>
 <input [(ngModel)]="nombreAtributo" placeholder="Escribe algo">
 <p>El valor introducido es: {{nombreAtributo}}</p>
+
+
+
+
+<h2>TAREA 2 - DIRECTIVAS PERSONALIZADAS</h2>
+
+<input type="text" appEnfoque placeholder="Escribe tu usuario">
+<input type="password" placeholder="Contraseña">
+
+<h3>EJERCICIO 1- CONTROL ACCESO Y FOCUS</h3>
+<p>En este ejercicio mediante un focus y un gitOnInit hace que el elemento de un
+  input tenga el foco nada más cargar la página
+</p>
+
+<h3>EJERCICIO 2- CONTROL DE ACCESO POR ROL </h3>
+<p>En este ejercicio solo se moestrará la puerta de acceso al usuario con el rol correspondiente.
+  En este caso el usuario permitido por defecto es "editor", por lo que no se podrá acceder
+  con otro usuario. Hay un div para los usuarios "admin", pero está oculto para los otros usuarios.
+</p>
+
+<div *appRolPermitido=" 'admin' ">
+  <p>Panel de Control Secreto (Solo para administradores)</p>
+</div>
+
+<div *appRolPermitido=" 'editor' ">
+  <button>Botón para Editores</button>
+</div>
+
+<h3>EJERCICIO 3- CONTADOR DE CLICS</h3>
+<p>Este ejercicio muestra un contador de clics en un elemento.
+  Con HostListener se puede controlar el número de clics realizados.</p>
+
+<button appContadorClicks (contadorClicks)="escucharClick($event)">Haz clic aquí</button>
+
+<h3>EJERCICIO 4- TEXTO GRANDE </h3>
+<p appTextoGrande>Este texto se muestra en grande gracias a la directiva personalizada textoGrande.</p>

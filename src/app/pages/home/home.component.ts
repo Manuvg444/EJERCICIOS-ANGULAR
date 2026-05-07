@@ -1,11 +1,15 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule, NgClass } from '@angular/common';
+import { EnfoqueDirective } from "../../directivas/enfoque.directive";
+import { RolPermitidoDirective } from "../../directivas/rol-permitido.directive";
+import { ContadorClicksDirective } from "../../directivas/contador-clicks.directive";
+import { TextoGrandeDirective } from '../../directivas/texto-grande.directive';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [FormsModule, CommonModule, NgClass],
+  imports: [FormsModule, CommonModule, NgClass, EnfoqueDirective, RolPermitidoDirective, ContadorClicksDirective, TextoGrandeDirective],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
@@ -103,6 +107,14 @@ export class HomeComponent {
   colorFondo: string = 'red';
 
   nombreAtributo: string = '';
+
+
+
+  //EJERCICIO CLICKS
+
+  escucharClick(numero: number) {
+    console.log('Número de clics: ' + numero + 'clics');
+  }
 
 
 }
