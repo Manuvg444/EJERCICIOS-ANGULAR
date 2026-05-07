@@ -117,4 +117,9 @@ export class HomeComponent {
   }
 
 
+
+  title = 'primer-proyecto';
+
+
+
 }
